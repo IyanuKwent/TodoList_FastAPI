@@ -82,7 +82,7 @@ function App() {
         )}
 
         <div className="submenu">
-          <button onClick={() => window.open("https://github.com/IyanuKwent/ToDoList_Django", "_blank")}>
+          <button onClick={() => window.open("https://github.com/IyanuKwent/TodoList_FastAPI", "_blank")}>
             Repository
           </button>
           <button onClick={() => window.open("https://backend-fastapi-obja.onrender.com/docs", "_blank")}>
