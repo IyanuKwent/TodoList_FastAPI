@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-export default function TodoList({ tasks, setTasks, authToken }) {
-  const API_URL = "https://todolist-django-backend.onrender.com/api/";
+export default function TodoList({ tasks, setTasks }) {
+  const API_URL = "https://backend-fastapi-obja.onrender.com";
 
   const [editIndex, setEditIndex] = useState(null);
   const [editText, setEditText] = useState("");
@@ -10,11 +10,10 @@ export default function TodoList({ tasks, setTasks, authToken }) {
   const updateTask = async (index, updatedText) => {
     const task = tasks[index];
     try {
-      const response = await fetch(API_URL + `tasks/${task.id}/`, {
+      const response = await fetch(`${API_URL}/tasks/${task.id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Token ${authToken}`,
         },
         body: JSON.stringify({
           text: updatedText,
@@ -38,11 +37,8 @@ export default function TodoList({ tasks, setTasks, authToken }) {
   const removeTask = async (index) => {
     const task = tasks[index];
     try {
-      const response = await fetch(API_URL + `tasks/${task.id}/`, {
+      const response = await fetch(`${API_URL}/tasks/${task.id}`, {
         method: "DELETE",
-        headers: {
-          "Authorization": `Token ${authToken}`,
-        },
       });
 
       if (response.ok) {
@@ -58,11 +54,10 @@ export default function TodoList({ tasks, setTasks, authToken }) {
   const toggleComplete = async (index) => {
     const task = tasks[index];
     try {
-      const response = await fetch(API_URL + `tasks/${task.id}/toggle/`, {
+      const response = await fetch(`${API_URL}/tasks/${task.id}/toggle`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Token ${authToken}`,
         },
       });
 
