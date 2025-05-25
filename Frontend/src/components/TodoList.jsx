@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export default function TodoList({ tasks, setTasks }) {
-  const API_URL = "https://backend-fastapi-obja.onrender.com";
+  const API_URL = "https://fast-api-6q47.onrender.com";
 
   const [editIndex, setEditIndex] = useState(null);
   const [editText, setEditText] = useState("");

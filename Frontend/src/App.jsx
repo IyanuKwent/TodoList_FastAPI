@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import TodoList from "./components/TodoList";
 
 function App() {
-  const API_URL = "https://backend-fastapi-obja.onrender.com";
+  const API_URL = "https://fast-api-6q47.onrender.com";
 
   const [darkMode, setDarkMode] = useState(localStorage.getItem("darkMode") === "true");
   const [task, setTask] = useState("");
@@ -85,7 +85,7 @@ function App() {
           <button onClick={() => window.open("https://github.com/IyanuKwent/TodoList_FastAPI", "_blank")}>
             Repository
           </button>
-          <button onClick={() => window.open("https://backend-fastapi-obja.onrender.com/docs", "_blank")}>
+          <button onClick={() => window.open("https://fast-api-6q47.onrender.com/docs", "_blank")}>
             FastAPI Docs
           </button>
         </div>
